@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="holamundo" class="com.utn.clase1.beans.HolaMundo">
+		<property name="saludo"
+			value="hola mundo desde un framework de mierda que tarda 8 años en iniciar y me hace reiniciar el pc al pedo"></property>
+	</bean>
+
+	<bean id="jugador" class="com.utn.clase1.beans.Jugador" scope ="singleton" lazy-init="true">
+		<property name="nombre" value="Default Name"></property>
+		<property name="arma">
+			<bean id="arma" class="com.utn.clase1.beans.Arma">
+				<property name="nombre" value="espada"></property>
+			</bean>
+
+		</property>
+		<property name="energia">
+			<bean id="energia" class="com.utn.clase1.beans.Energia">
+				<property name="cantidad" value="100"></property>
+				<property name="maxCant" value="100"></property>
+				<property name="poder" value="false"></property>
+			</bean>
+
+		</property>
+	</bean>
+
+
+
+</beans>
